@@ -19,8 +19,8 @@ class _QuoteListState extends State<QuoteList> {
   // Qoute firstQuote = Qoute('fsadas', 'sadsdadasdas');
   List<Qoute> quotes = [
     Qoute(text: 'Osca Wild', author: 'Be yourself, everyone else is already taken'),
-    Qoute(text: 'Osca Wild', author: 'Be yourself, everyone else is already taken'),
-    Qoute(text: 'Osca Wild', author: 'Be yourself, everyone else is already taken')
+    Qoute(text: 'ASD dad sa', author: 'sdjsa  dsl jladsla jdasl dsaldsa ds dsa d'),
+    Qoute(text: 'wqeqow wo', author: 'sds das dsadsadsljqd qdqds d')
   ];
 
 
@@ -38,7 +38,14 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children: quotes.map((quote){
-          return QuoteCard(quote: quote);
+          return QuoteCard(
+              quote: quote,
+              delete: (){
+                setState(() {
+                  quotes.remove(quote);
+                });
+              }
+          );
         }).toList(),
       ),
     );
